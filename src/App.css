@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+.foot-text{
+  text-decoration: none;
+  color: #D0AC54;
+  font-size: 15px;
+  font-weight: 500;
+
+}
+.foot-icon{
+ 
+}

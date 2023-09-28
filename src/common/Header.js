@@ -1,18 +1,52 @@
-
-
-
-
-
-
-import React from 'react'
+import React, { useState } from 'react';
+import Grid from '@mui/material/Grid';
+import { Link } from 'react-router-dom';
+import logo from "../assets/logo1.png";
+import menu from "../assets/menui.png";
+import { Box } from '@mui/material';
+import MenuPage from '../common/MenuPage';
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleMenuClick = () => {
+    setIsMenuOpen(true);
+  }
+
   return (
-    <div>Header</div>
-  )
+    <Box sx={{ position: "fixed", top: 0, width: "100%", background: "#fff", zIndex: 999 }}>
+      <Grid container spacing={2} sx={{ padding: "10px 20px 10px 20px" }}>
+        <Grid item xs={6}>
+          <Box sx={{ paddingLeft: { md: "40px" } }}>
+            <img src={logo} alt='logo' style={{ maxWidth: "200px", maxHeight: "200px" }} />
+          </Box>
+        </Grid>
+        <Grid item xs={6} sx={{ display: "flex", justifyContent: "flex-end" }}>
+          <Box sx={{ display: "flex", marginTop: "15px" }}>
+            <Box sx={{ fontSize: "18px", fontWeight: "500", paddingRight: "20px"  , color:"#D0AC54", cursor:"pointer", display:{sm:"none",xs:"none", md:"block"}}}  onClick={handleMenuClick}>
+              Menu
+            </Box>
+            <Box sx={{ paddingRight: "60px" }}>
+              <img src={menu} alt="menu" onClick={handleMenuClick} c/>
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
+      {isMenuOpen && (
+        <MenuPage onClose={() => setIsMenuOpen(false)} />
+      )}
+    </Box>
+  );
 }
 
-export default Header
+export default Header;
+
+
+
+
+
+
+
 
 
 
@@ -30,43 +64,12 @@ export default Header
 
 // const Header = () => {
 
-
-//   const { window } = props;
-//   const [mobileOpen, setMobileOpen] = React.useState(false);
-
-//   const handleDrawerToggle = () => {
-//     setMobileOpen((prevState) => !prevState);
-//   };
-
-//   const drawer = (
-//     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-//       <Typography variant="h6" sx={{ my: 2 }}>
-//         MUI
-//       </Typography>
-//       <Divider />
-//       <List>
-//         {navItems.map((item) => (
-//           <ListItem key={item.label} disablePadding>
-//             <ListItemButton
-//               component={Link} 
-//               to={item.path} // Set the path for each navigation item
-//               sx={{ textAlign: 'center' }}
-//             >
-//               <ListItemText primary={item.label} />
-//             </ListItemButton>
-//           </ListItem>
-//         ))}
-//       </List>
-//     </Box>
-//   );
-
-//   const container = window !== undefined ? () => window().document.body : undefined;
  
 
 //   return (
-//     <>
+//     <Box >
       
-//       <Grid container spacing={2} sx={{padding:"10px 20px 10px 20px"}}>
+//       <Grid container spacing={2} sx={{padding:"10px 20px 10px 20px",}}>
 
 //         <Grid item xs={6} >
 
@@ -83,10 +86,7 @@ export default Header
 //               Menu
 //             </Box>
 
-//             <Box sx={{ paddingRight: "40px", mr: 2, display: { sm: 'none' } }}   color="inherit"
-//             aria-label="open drawer"
-//             edge="start"
-//             onClick={handleDrawerToggle}
+//             <Box sx={{ paddingRight: "60px", }}
 //              >
 //             <img src={menu}   />
 //             </Box>
@@ -96,7 +96,7 @@ export default Header
 //         </Grid>
 
 //       </Grid>
-//     </>
+//     </Box>
 
 // )
 // }
@@ -104,8 +104,3 @@ export default Header
 // export default Header
 
 
-
-
-    // <SideWidth>
-
-    // </SideWidth>
