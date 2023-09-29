@@ -18,7 +18,7 @@ const Header = () => {
       <Grid container spacing={2} sx={{ padding: "10px 20px 10px 20px" }}>
         <Grid item xs={6}>
           <Box sx={{ paddingLeft: { md: "40px" } }}>
-            <img src={logo} alt='logo' style={{ maxWidth: "200px", maxHeight: "200px" }} />
+            <img src={logo} alt='logo' style={{ maxWidth: "180px", maxHeight: "180px" }} />
           </Box>
         </Grid>
         <Grid item xs={6} sx={{ display: "flex", justifyContent: "flex-end" }}>

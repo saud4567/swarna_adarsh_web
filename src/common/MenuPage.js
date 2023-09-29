@@ -1,9 +1,11 @@
 // MenuPage.js
+import { Box } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MenuPage = ({ onClose }) => {
   return (
+    <Box sx={{height:"80vh", position:"relative"}}>
     <div>
       <button onClick={onClose} style={{ position: 'absolute', top: '10px', right: '10px' }}>
         Close
@@ -15,7 +17,21 @@ const MenuPage = ({ onClose }) => {
         {/* Add more menu links as needed */}
       </ul>
     </div>
+    </Box>
   );
 }
 
 export default MenuPage;
+
+
+
+
+
+
+
+
+
+
+
+
+
