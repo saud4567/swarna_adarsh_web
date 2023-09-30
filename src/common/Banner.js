@@ -34,7 +34,7 @@ const Banner = (props) => {
   };
 
   const text2Styles = {
-    color: "red",
+    color: "#D0AC54",
     fontSize: {
       xs: "26px", // Adjust font size for extra-small screens
       sm: "38px",
@@ -49,7 +49,7 @@ const Banner = (props) => {
 
   return (
     <Box sx={bannerStyles}>
-      <Box >
+      <Box sx={{display:"flex", flexDirection:"column", position:"absolute", paddingRight:"120px"}}>
         <Typography sx={textStyles}>{text}</Typography>
         <Typography sx={text2Styles}>{text2}</Typography>
       </Box>

@@ -2,14 +2,15 @@
 import { Box } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ClearSharpIcon from '@mui/icons-material/ClearSharp';
 
 const MenuPage = ({ onClose }) => {
   return (
-    <Box sx={{height:"80vh", position:"relative"}}>
+    <Box sx={{height:"80vh", }}>
     <div>
-      <button onClick={onClose} style={{ position: 'absolute', top: '10px', right: '10px' }}>
-        Close
-      </button>
+      <Box onClick={onClose} style={{ position: 'absolute', top: '30px', right: '70px' }}>
+       <ClearSharpIcon fontSize='large'/>
+      </Box>
       <ul>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/page1">Page 1</Link></li>

@@ -6,6 +6,7 @@ import Header from './common/Header';
 import HomePage from './Pages/Home'; // Create this component
 import MenuPage from './common/MenuPage'; // Create this component
 import Home from './Pages/Home';
+import About from './Pages/About';
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
     </Routes>
    */}
 
-<Home />  </>
+{/* <Home />  */}
+<About/>
+ </>
   );
 }
 

@@ -9,7 +9,7 @@ import face from "../assets/face.png";
 import twit from "../assets/twit.png";
 import insta from "../assets/insta.png";
 import world from "../assets/world.png";
-import bline from "../assets/blkline.png";
+// `import bline from "../assets/blkline.png";`
 import logo1 from "../assets/logo1.png";
 
 const Footer = () => {
