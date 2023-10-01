@@ -1,34 +1,12 @@
 import React from 'react';
-import About from "../components/Home/aboutSwarna";
-import Retail from "../components/Home/Retailg";
-import Codeoc from "../components/Home/Conduct";
-import Voice from "../components/Home/Voice";
-import Register from "../components/Home/Register";
+import Home from "../Container/Home";
 
-// common comp header and footer and container and banner
-import Header from "../common/Header";
-import Banner from "../common/Banner";
-import Footer from "../common/Footer";
-import bdImg1 from "../assets/homebg.png"
-
-const Home = () => {
+const home = () => {
   return (
     <>
-    
-    <Header />
-    <Banner  backgroundImage={bdImg1} text={"Working together, on principles."} text2={" Isi Mey Faida Hai."}   />
-    <About/>
-    <Retail/>
-    <Codeoc/>
-    <Voice/>
-    <Register/>
-
-    <Footer/>
-    
-
-
+     <Home /> 
     </>
   )
 }
 
-export default Home
+export default home

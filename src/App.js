@@ -1,12 +1,13 @@
 
 import './App.css';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import Header from './common/Header';
-import HomePage from './Pages/Home'; // Create this component
-import MenuPage from './common/MenuPage'; // Create this component
-import Home from './Pages/Home';
-import About from './Pages/About';
+
+// import Header from './common/Header';
+import Home from './Container/Home'; // Create this component
+import Layout from './Layout/layout';
+
+// import About from './Pages/About';
 
 function App() {
   return (
@@ -20,7 +21,17 @@ function App() {
    */}
 
 {/* <Home />  */}
-<About/>
+{/* <About/> */}
+
+<Routes>
+      <Route exact path="/" element={<Layout />}>
+          <Route index element={<Navigate to="/home" replace />}/>
+          <Route path="/home" element={<Home />} />
+         
+      </Route>
+    </Routes>
+
+
  </>
   );
 }
