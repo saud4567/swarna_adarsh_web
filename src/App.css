@@ -51,3 +51,7 @@
 
   background-image: url("./assets/abbg.png");
 }
+
+.retbg{
+  background-image:url("/public//assets/retbg.png");
+}
