@@ -2,8 +2,8 @@ import React from 'react';
 import About from "../components/aboutSwarna";
 import Retailg from "../components/Retailg";
 import Codeoc from "../components/Conduct";
-import Voice from "../components/Voice";
-// import Register from "../components/Home/Register";
+// import Voice from "../components/Voice";
+import Register from "../components/Register";
 
 // common comp header and footer and container and banner
 // import Header from "../common/Header";
@@ -20,10 +20,9 @@ const Home = () => {
     <About/>
     <Retailg />
     <Codeoc/>
-    <Voice/>
-    {
-    /* 
-    <Register/> */}
+    {/* <Voice/> */}
+    
+    <Register/>
 
   
     

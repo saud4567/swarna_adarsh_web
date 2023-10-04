@@ -6,6 +6,12 @@ import React from 'react';
 // import Header from './common/Header';
 import Home from './Container/Home'; // Create this component
 import Layout from './Layout/layout';
+import About from "./Container/About";
+import Code from "./Container/codec";
+import Faq from "./Container/Faq";
+import Policy from "./Container/Privacy";
+import Terms from "./Container/Terms";
+
 
 // import About from './Pages/About';
 
@@ -29,6 +35,14 @@ function App() {
           <Route path="/home" element={<Home />} />
          
       </Route>
+      <Route path="/about" element={<About />} />
+      <Route path="/conduct" element={<Code />} />
+      <Route path="/faq" element={<Faq />} />
+      <Route path="/policy" element={<Policy />} />
+      <Route path="/terms" element={<Terms />} />
+
+
+
     </Routes>
 
 

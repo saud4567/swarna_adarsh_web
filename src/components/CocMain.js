@@ -9,14 +9,9 @@ import reg5 from "../assets/reg5.png";
 import reg6 from "../assets/reg6.png";
 
 
-const Conduct = () => {
+const CocMain = () => {
   return (
     <PageWidth sx={{ paddingTop: "50px" }}>
-      <Box sx={{ paddingBottom: "50px", }}>
-        <Typography align="center" sx={{ color: "#D0AC54", fontWeight: "400", fontSize: { sm: "25px", md: "30px" } }}>
-          — Code of Conduct —
-        </Typography>
-      </Box>
 
 
       <Grid container spacing={1}>
@@ -241,11 +236,7 @@ const Conduct = () => {
       </Grid>
 
     </PageWidth>
-
   )
 }
 
-export default Conduct;
-
-
-
+export default CocMain

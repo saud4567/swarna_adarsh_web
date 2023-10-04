@@ -11,7 +11,7 @@ const About = () => {
     <>
     <Header/>
     <Banner  backgroundImage={aboutbg} text={"Working together, on principles."} text2={" Isi Mey Faida Hai."}/>
-    <Working/>
+    
     <Member/>
     <Footer/>
     

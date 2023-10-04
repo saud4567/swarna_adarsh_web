@@ -7,7 +7,8 @@ const Banner = (props) => {
   const bannerStyles = {
     backgroundImage: `url(${backgroundImage})`,
     backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
+    // backgroundSize: 'cover',
+    objectFit:"scale-down",
     height: '120vh',
     marginTop: "90px",
     display: "flex",
