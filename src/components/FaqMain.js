@@ -82,16 +82,14 @@ const FAQPage = () => {
 <PageWidth>
 
       <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <Typography variant="h4">Frequently Asked Questions</Typography>
-        </Grid>
-        <Grid item xs={12}>
+       
+        <Grid item xs={12} sx={{marginTop:{xs:"20px", sm:"20px", md:"30px"}}}>
           <div style={{boxShadow:"none"}}>
             {faqData.map((item, index) => (
               <Accordion
                 key={index}
                 expanded={expanded === index}
-                onChange={() => toggleAccordion(index)}
+                onChange={() => toggleAccordion(index)} style={{boxShadow:"none", paddingBottom:"20px"}}
               >
                 <AccordionSummary sx={{border:"none", borderBottom:"2px solid #D0AC54",}}>
                   <Typography variant="subtitle1" fontWeight="bold">
@@ -104,7 +102,7 @@ const FAQPage = () => {
                     {item.question}
                   </Typography>
                 </AccordionSummary>
-                <AccordionDetails>
+                <AccordionDetails sx={{paddingTop:"20px"}}>
                   <Typography variant="body2">{item.answer}</Typography>
                 </AccordionDetails>
               </Accordion>
