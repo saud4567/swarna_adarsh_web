@@ -15,16 +15,16 @@ import logo1 from "../assets/logo1.png";
 const Footer = () => {
   return (
     <Box sx={{paddingBottom:"20px"}}>
-      <Grid container spacing={2} sx={{ display: "flex", justifyContent: "center" }}>
-        <Grid item xs={10} md={5}        sm={5} sx={{ display: "flex" }}>
+      <Grid container spacing={2} sx={{ display: "flex", justifyContent: "center" ,}}>
+        <Grid item xs={10} md={5}        sm={5} sx={{ display: "flex" , flex:{sm:"none", xs:"none", md:"flex"}}}>
           <Box >
-            main            <Stack direction={{ xs: 'column', sm: 'row' }}   spacing={3}>
+                      <Stack direction={{ xs: 'column', sm: 'row' }}   spacing={3}>
               <Box sx={{ paddingTop: { xs: "10px", sm: "0" },maxHeight:"100px" }}>
                 <img src={logo1} alt="Logo" />
               <Box sx={{maxWidth:"100px", paddingTop:"10px"}}>
                 <p style={{ padding: "0", margin: "0", color: "#464749", fontSize: "13px"}}>Inspired by the</p>
               </Box>
-              <Box sx={{maxWidth:"200px"}}>
+              <Box sx={{maxWidth:"200px",}}>
                 <p style={{ padding: "0", margin: "0", color: "#464749", fontSize: "13px" }}>Retail Gold Investment Principles</p>
               </Box>
               </Box>
@@ -32,7 +32,13 @@ const Footer = () => {
                 <img src={bline} height="100px" alt="Line" />
               </Box> */}
 
-              <Box sx={{width:"2px", height:"95px", backgroundColor:"#D0AC54", display:"flex"}}>
+
+<Box sx={{width:"2px", height:"25px", display:{md:"none",sx:"flex",xs:"flex"}, }}>
+
+              </Box>
+
+
+              <Box sx={{width:"2px", height:"95px", backgroundColor:"#D0AC54", display:{md:"flex",sx:"none",xs:"none"}, }}>
 
               </Box>
               <Box>

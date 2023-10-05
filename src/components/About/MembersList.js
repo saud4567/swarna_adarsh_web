@@ -50,7 +50,7 @@ const MembersList = () => {
 
 
         <Box sx={{backgroundColor:"#322666",paddingBottom:"10px", }} >
-            <Grid container spacing={2} sx={{}} >
+            <Grid container spacing={1} sx={{}} >
                 <Grid item xs={3} sm={3} md={3}>
                     <Stack>
                         <Box className={classes.text} >STAKEHOLDER CATEGORY</Box>
@@ -272,7 +272,7 @@ const MembersList = () => {
                         <Box className={classes.data}  >Bhargav Vaidya (Invitee)</Box>
                     </Stack>
                 </Grid>
-                <Grid item xs={3} sm={3} md={3}>
+                <Grid item xs={3} sm={3} md={3} >
                     <Stack>
                         <Box className={classes.data} >Secretary, IBJA</Box>
                         <Box className={classes.data} >Managing Director, <br/> Riddhisiddhi Bullion Ltd</Box>
@@ -293,12 +293,14 @@ const MembersList = () => {
 const useStyle = makeStyles({
   text: {
     color: "white",
-    fontSize: { xs: "12px", md: "15px" },
+    fontSize: { xs: "10px", md: "15px", sm:"11px" },
   },
   data: {
     marginBottom: { xs: "5px", md: "10px" },
-    fontSize: { xs: "10px", md: "12px" },
+    fontSize: { xs: "5px", md: "12px" },
   },
+
+
 });
 
 export default MembersList;

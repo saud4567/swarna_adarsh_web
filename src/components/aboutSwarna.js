@@ -22,10 +22,13 @@ const aboutSwarna = () => {
             <Typography sx={{ fontSize: {md:"12px",sm:"12px"} , padding:{sm:"20px 10px 30px 53px", xs:"40px 30px 30px 53px"}, textAlign:{sm:"center", md:"left", xs:"center"}}}>
               The Indian Gold industry has always worked towards improving its quality of business operations and upholding ethical standards. From the standardization of weights and measures to the introduction of hallmarking, it has not only climbed upwards in its developmental trajectory but also ensured the process is more transparent and efficient. Presenting you an initiative by the Indian Gold industry - Swarna Adarsh Abhiyaan. It is a one-of-its-kind industry initiative that offers best practices and suitable solutions that will hand-hold you through your business journey in a principled manner. This will retain the trust of the existing stakeholders and generate interest and stimulate new stakeholders to follow these principles.
             </Typography>
-            <Grid item xs={12} sx={{ paddingBottom: "50px", paddingTop:"50px" }}>
-            <Typography align="center" sx={{ color: "#D0AC54", fontWeight: "500", fontSize:{sm:"25px", md:"20px"} }}>
+
+            <Grid item xs={12} sx={{ paddingBottom: "50px", paddingTop:"50px", display:"flex", justifyContent:{sm:"center",xs:"center", md:"flex-start"}, }}>
+            <Box sx={{maxWidth:"200px" }}>
+            <Typography align="left" sx={{ color: "#D0AC54", fontWeight: "500", fontSize:{sm:"25px", md:"20px"},  paddingLeft:"50px" }}>
               READ MORE +
             </Typography>
+          </Box>
           </Grid>
           </Grid>
           <Grid item sm={1}md={1} sx={{display:"flex", justifyContent:"center", alignItems:"center"}}>

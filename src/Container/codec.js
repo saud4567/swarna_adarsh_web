@@ -11,11 +11,15 @@ import CocMain from '../components/CocMain';
 const codec = () => {
   return (
     <>
-    <Header/>
-    <Banner  backgroundImage={cocog} text={"Working together, on principles."} text2={" Isi Mey Faida Hai."}/>
+    
+    <Banner  backgroundImage={cocog}  text2={" Code of Conduct"} bannersx={{   
+    backgroundSize:{xs:"cover",md:"cover",sm:"cover"},
+    height:{xs:"40vh", sm:"50vh",md:"120vh"},
+    display:"flex", alignItems:{sm:"center", xs:"end", md:"center"}, justifyContent:{sm:"center ", xs:"center", md:"end"},
+    backgroundRepeat:"no-repeat",}}/>
     
     <CocMain />
-    <Footer/>
+    
     
     </>
   )
