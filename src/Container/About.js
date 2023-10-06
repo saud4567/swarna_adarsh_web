@@ -9,11 +9,11 @@ import aboutbg from "../assets/aboutbg.png";
 const About = () => {
   return (
     <>
-    <Header/>
+    
     <Banner  backgroundImage={aboutbg} text={"Working together, on principles."} text2={" Isi Mey Faida Hai."}/>
     
     <Member/>
-    <Footer/>
+    
     
     </>
   )

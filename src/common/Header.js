@@ -109,7 +109,7 @@ const Header = () => {
         <Button  sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>NEWS AND UPDATE</Button>
       </NavLink>
 
-      <NavLink to="faqs" >
+      <NavLink to="faq" >
         <Button  sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>FAQS</Button>
       </NavLink>
 

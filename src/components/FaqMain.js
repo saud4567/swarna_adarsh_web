@@ -71,9 +71,9 @@ const FAQPage = () => {
 
   const toggleAccordion = (index) => {
     if (expanded === index) {
-      setExpanded(-1); // Close the currently expanded accordion
+      setExpanded(-1);
     } else {
-      setExpanded(index); // Expand the selected accordion
+      setExpanded(index);
     }
   };
 

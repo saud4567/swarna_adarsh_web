@@ -34,12 +34,12 @@ function App() {
           <Route index element={<Navigate to="/home" replace />}/>
           <Route path="/home" element={<Home />} />
          
-      </Route>
       <Route path="/about" element={<About />} />
       <Route path="/conduct" element={<Code />} />
       <Route path="/faq" element={<Faq />} />
       <Route path="/policy" element={<Policy />} />
       <Route path="/terms" element={<Terms />} />
+      </Route>
 
 
 
