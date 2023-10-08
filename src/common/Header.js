@@ -1,4 +1,3 @@
-
 import {
   Box,
   Button,
@@ -7,14 +6,14 @@ import {
   Typography,
   styled,
   IconButton, // Import IconButton
-} from '@mui/material';
-import { makeStyles } from '@mui/styles';
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import menui from '../assets/menui.png';
-import logo1 from '../assets/logo1.png';
-import PageWidth from './Container';
-import CloseIcon from '@mui/icons-material/Close'; // Import the Close icon
+} from "@mui/material";
+import { makeStyles } from "@mui/styles";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import menui from "../assets/menui.png";
+import logo1 from "../assets/logo1.png";
+import PageWidth from "./Container";
+import CloseIcon from "@mui/icons-material/Close"; // Import the Close icon
 
 const Header = () => {
   const classes = useStyles();
@@ -27,38 +26,64 @@ const Header = () => {
 
   return (
     <>
-      <Box className={menu ? classes.header : null} padding="8px">
-        <Grid container spacing={2}>
+      <Box
+        className={menu ? classes.header : null}
+        sx={{
+          zIndex: 999,
+          // position: "fixed",
+          top: "0",
+          width: "100%",
+          padding: "8px",
+        }}
+      >
+        <Grid
+          container
+          spacing={2}
+          sx={{
+            background: "#fff",
+            transition: "visibility 0.3s ease-in-out",
+          }}
+        >
           <Grid item xs={6} sm={6} md={6} xl={6}>
             <Stack ml="20px">
-              <img src={logo1} alt="not loaded" width="200px" />
+              {/* <img src={logo1} alt="not loaded" width="200px" /> */}
+              <img
+                src={logo1}
+                alt="not loaded"
+                width="200px"
+                style={{ cursor: "pointer" }}
+                onClick={() => {
+                // Close the menu if it's open
+                  window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to the top smoothly
+                }}
+              />
             </Stack>
           </Grid>
 
           <Grid
             item
             xs={6}
-            sx={{ display: 'flex', justifyContent: 'flex-end' }}
+            sx={{ display: "flex", justifyContent: "flex-end" }}
           >
-            <Box sx={{ display: 'flex', marginTop: '15px' }}>
+            <Box sx={{ display: "flex", marginTop: "15px" }}>
               <Box
                 sx={{
-                  fontSize: '18px',
-                  fontWeight: '500',
-                  paddingRight: '20px',
-                  color: '#D0AC54',
-                  cursor: 'pointer',
-                  display: { sm: 'none', xs: 'none', md: 'block' },
+                  fontSize: "18px",
+                  fontWeight: "500",
+                  paddingRight: "20px",
+                  color: "#D0AC54",
+                  cursor: "pointer",
+                  display: { sm: "none", xs: "none", md: "block" },
                 }}
                 onClick={() => setMenu(true)}
               >
                 Menu
               </Box>
-              <Box sx={{ paddingRight: '60px' }}>
+              <Box sx={{ paddingRight: "60px" }}>
                 <img
                   src={menui}
                   alt="menu"
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                   onClick={() => setMenu(true)}
                 />
               </Box>
@@ -71,62 +96,100 @@ const Header = () => {
       {menu && (
         <IconButton
           sx={{
-            position: 'absolute',
-            top: '20px',
-            right: '20px',
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            color: 'white',
+            position: "absolute",
+            top: "20px",
+            right: "20px",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            color: "white",
           }}
           onClick={handleMenuClose}
+
         >
           <CloseIcon />
         </IconButton>
       )}
 
       <Box className={menu ? classes.navItem : classes.navlist}>
-        
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            height: { md: "100vh", sm: "60vh", xs: "50vh" },
+            paddingTop: { md: "20px", sm: "30px", xs: "30px" },
+          }}
+        >
+          <NavLink to="about">
+            <Button
+              sx={{ color: "white", fontSize: "20px" }}
+              onClick={() => setMenu(false)}
+            >
+              ABOUT
+            </Button>
+          </NavLink>
 
+          <NavLink to="about">
+            <Button
+              sx={{ color: "white", fontSize: "20px" }}
+              onClick={() => setMenu(false)}
+            >
+              GOVERNENCE
+            </Button>
+          </NavLink>
 
-      <Box  sx={{
-        display:"flex", flexDirection:'column',
-        height:{md:"100vh", sm:"60vh", xs:"50vh"},
-        paddingTop:{md:"20px", sm:"30px", xs:"30px"}
-      }}>
+          <NavLink to="conduct">
+            <Button
+              sx={{ color: "white", fontSize: "20px" }}
+              onClick={() => setMenu(false)}
+            >
+              CODE OF CONDUCT
+            </Button>
+          </NavLink>
 
-      <NavLink to='about' >
-        <Button sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>ABOUT</Button>
-      </NavLink>
+          <NavLink to="conduct">
+            <Button
+              sx={{ color: "white", fontSize: "20px" }}
+              onClick={() => setMenu(false)}
+            >
+              NEWS AND UPDATE
+            </Button>
+          </NavLink>
 
-      <NavLink to="governence" >
-        <Button sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>GOVERNENCE</Button>
-      </NavLink>
+          <NavLink to="faq">
+            <Button
+              sx={{ color: "white", fontSize: "20px" }}
+              onClick={() => setMenu(false)}
+            >
+              FAQS
+            </Button>
+          </NavLink>
 
-      <NavLink to='conduct' >
-        <Button sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>CODE OF CONDUCT</Button>
-      </NavLink>
+          <NavLink to="faq">
+            <Button
+              sx={{ color: "white", fontSize: "20px" }}
+              onClick={() => setMenu(false)}
+            >
+              DOWNLOADABLE
+            </Button>
+          </NavLink>
 
-      <NavLink to="news" >
-        <Button  sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>NEWS AND UPDATE</Button>
-      </NavLink>
+          <NavLink to="policy">
+            <Button
+              sx={{ color: "white", fontSize: "20px" }}
+              onClick={() => setMenu(false)}
+            >
+              PRIVACY POLICY
+            </Button>
+          </NavLink>
 
-      <NavLink to="faq" >
-        <Button  sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>FAQS</Button>
-      </NavLink>
-
-      <NavLink to="faq" >
-        <Button  sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>DOWNLOADABLE</Button>
-      </NavLink>
-
-      <NavLink to='policy'>
-        <Button  sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>PRIVACY POLICY</Button>
-      </NavLink>
-
-      <NavLink to='disclaimer'>
-        <Button   sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>DISCLAIMER</Button>
-      </NavLink>
-      </Box>
-
-
+          <NavLink to="home">
+            <Button
+              sx={{ color: "white", fontSize: "20px" }}
+              onClick={() => setMenu(false)}
+            >
+              DISCLAIMER
+            </Button>
+          </NavLink>
+        </Box>
       </Box>
     </>
   );
@@ -135,29 +198,25 @@ const Header = () => {
 const useStyles = makeStyles({
   navlist: {
     // height:{md:"100vh"},
-    display: 'none',
+    display: "none",
   },
   navItem: {
     // display:"flex",
-    backgroundColor: '#CAA64E',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: { md: 'start' },
-    textAlign: 'Left',
-    margin: '0px',
-    paddingTop: { xs: '100px', sm: '100px', md: '50px' },
+    backgroundColor: "#CAA64E",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: { md: "start" },
+    textAlign: "Left",
+    margin: "0px",
+    paddingTop: { xs: "100px", sm: "100px", md: "50px" },
   },
   header: {
-    display: 'none',
+    display: "none",
   },
 });
 
 export default Header;
-
-
-
-
 
 // import { Box, Button, Grid, Stack, Typography, styled } from '@mui/material'
 // import { makeStyles } from '@mui/styles'
@@ -173,7 +232,7 @@ export default Header;
 //   const [menu , setMenu] = useState()
 
 //   return (
-    
+
 // <>
 //   <Box   className={menu ? classes.header : null} padding="8px" >
 
@@ -196,7 +255,7 @@ export default Header;
 //                   cursor: 'pointer',
 //                   display: { sm: 'none', xs: 'none', md: 'block' },
 //                 }}
-              
+
 //                 onClick={()=>setMenu(true)}>
 //                 Menu
 //               </Box>
@@ -207,74 +266,55 @@ export default Header;
 //             </Box>
 //           </Grid>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //     </Grid>
 
 //     </Box>
 
- 
-
-
 //     <Box className = {menu ? classes.navItem : classes.navlist} >
 
-      // <Box  sx={{
-      //   display:"flex", flexDirection:'column',
-      //   height:{md:"100vh", sm:"60vh", xs:"50vh"},
-      //   paddingTop:{md:"20px", sm:"30px", xs:"30px"}
-      // }}>
+// <Box  sx={{
+//   display:"flex", flexDirection:'column',
+//   height:{md:"100vh", sm:"60vh", xs:"50vh"},
+//   paddingTop:{md:"20px", sm:"30px", xs:"30px"}
+// }}>
 
-      // <NavLink to='about' >
-      //   <Button sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>ABOUT</Button>
-      // </NavLink>
+// <NavLink to='about' >
+//   <Button sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>ABOUT</Button>
+// </NavLink>
 
-      // <NavLink to="governence" >
-      //   <Button sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>GOVERNENCE</Button>
-      // </NavLink>
+// <NavLink to="governence" >
+//   <Button sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>GOVERNENCE</Button>
+// </NavLink>
 
-      // <NavLink to='conduct' >
-      //   <Button sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>CODE OF CONDUCT</Button>
-      // </NavLink>
+// <NavLink to='conduct' >
+//   <Button sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>CODE OF CONDUCT</Button>
+// </NavLink>
 
-      // <NavLink to="news" >
-      //   <Button  sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>NEWS AND UPDATE</Button>
-      // </NavLink>
+// <NavLink to="news" >
+//   <Button  sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>NEWS AND UPDATE</Button>
+// </NavLink>
 
-      // <NavLink to="faqs" >
-      //   <Button  sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>FAQS</Button>
-      // </NavLink>
+// <NavLink to="faqs" >
+//   <Button  sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>FAQS</Button>
+// </NavLink>
 
-      // <NavLink to="faq" >
-      //   <Button  sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>DOWNLOADABLE</Button>
-      // </NavLink>
+// <NavLink to="faq" >
+//   <Button  sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>DOWNLOADABLE</Button>
+// </NavLink>
 
-      // <NavLink to='policy'>
-      //   <Button  sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>PRIVACY POLICY</Button>
-      // </NavLink>
+// <NavLink to='policy'>
+//   <Button  sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>PRIVACY POLICY</Button>
+// </NavLink>
 
-      // <NavLink to='disclaimer'>
-      //   <Button   sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>DISCLAIMER</Button>
-      // </NavLink>
-      // </Box>
-      
-   
+// <NavLink to='disclaimer'>
+//   <Button   sx={{color:"white" ,fontSize:"20px"}} onClick={()=>setMenu(false)}>DISCLAIMER</Button>
+// </NavLink>
+// </Box>
+
 //     </Box>
 
 //     </>
-    
+
 //   )
 // }
 
@@ -283,60 +323,26 @@ export default Header;
 //   navlist:{
 //     // height:{md:"100vh"},
 //     display:"none"
-    
+
 //   },
 //   navItem:{
 //     // display:"flex",
 
 //     backgroundColor:"#CAA64E",
-//     display:"flex",flexDirection:"column", justifyContent:"center", alignItems:{md:"start", }, 
+//     display:"flex",flexDirection:"column", justifyContent:"center", alignItems:{md:"start", },
 //     textAlign:"Left",
 //     margin:"0px",
-//     padding:{xs:"100px", sm:"100px", md:"50px"},    
+//     padding:{xs:"100px", sm:"100px", md:"50px"},
 //   },
-  
+
 //   header:{
 //     display:"none"
 //   }
-//  , 
+//  ,
 
-  
 // })
-  
-
 
 // export default Header
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React, { useState } from 'react';
 // import Grid from '@mui/material/Grid';
@@ -402,13 +408,6 @@ export default Header;
 
 // export default Header;
 
-
-
-
-
-
-
-
 // import React from 'react';
 // import Grid from '@mui/material/Grid';
 // import SideWidth from './Sidecommon';
@@ -417,23 +416,17 @@ export default Header;
 // import menu from "../assets/menui.png";
 // import { Box } from '@mui/material';
 
-
-
-
-
 // const Header = () => {
-
- 
 
 //   return (
 //     <Box >
-      
+
 //       <Grid container spacing={2} sx={{padding:"10px 20px 10px 20px",}}>
 
 //         <Grid item xs={6} >
 
 //         <Box sx={{ paddingLeft: { md: "40px",  }, }}>
-          
+
 //         <img src={logo} alt='logo' style={{ maxWidth: "200px", maxHeight: "200px", }} />
 //           </Box>
 //         </Grid>
@@ -461,5 +454,3 @@ export default Header;
 // }
 
 // export default Header
-
-

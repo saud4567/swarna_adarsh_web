@@ -7,7 +7,7 @@ import cap from '../assets/cap.png';
 
 const Register = () => {
   return (
-    <PageWidth>
+    <PageWidth sx={{ paddingTop: "50px" }}>
       <Grid container spacing={2} sx={{ display: {sm:'flex', md:"flex", xs:"flex"},flexDirection:{sm:"column", md:"row", xs:"column"}, alignItems:{sm:"center", xs:"center",} }}>
         <Grid item xs={12} sx={{ paddingBottom: '20px' }}>
           <Typography
@@ -68,7 +68,7 @@ const Register = () => {
             <span id="captcha">I’m not a robot</span>
             <img src={cap} alt="not loaded" width="35px" />
           </Box>
-          <Box sx={{ maxWidth: '200px', backgroundColor: '#D0AC54', color: 'white', textAlign: 'center', paddingTop: '2px', height: '30px' }}>
+          <Box sx={{textAlign:"center", maxWidth: '200px', backgroundColor: '#D0AC54', color: 'white', textAlign: 'center', paddingTop: '5px', height: '30px' }}>
             PARTICIPATE
           </Box>
         </Grid>

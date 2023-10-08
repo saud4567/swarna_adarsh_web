@@ -1,14 +1,13 @@
 import React from 'react'
-// import Container from '../../Common/Container'
+import Container from '../../Common/Container'
 import { Box, Stack, Typography } from '@mui/material'
 import { makeStyles } from '@mui/styles'
-import PageWidth from '../common/Container'
 
 const PrivacyPolicy = () => {
     const classes = useStyle();
   return (
    <Box>
-    <PageWidth>
+    <Container>
     
         <Stack>
         <Box sx={{display:"flex", justifyContent:"center", mb:"50px"}} >
@@ -67,7 +66,7 @@ const PrivacyPolicy = () => {
 
     <Box>
     </Box>
-    </PageWidth>
+    </Container>
    </Box>
   )
 }
@@ -78,7 +77,7 @@ const useStyle = makeStyles({
         lineHeight:"15px",
         fontSize:"12px",
         color:"#231F20",
-        fontWeight:"600"
+        fontWeight:"500"
     }
 })
 
