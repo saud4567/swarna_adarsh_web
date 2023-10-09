@@ -10,7 +10,7 @@ const About = () => {
   return (
     <>
     
-    <Banner  backgroundImage={aboutbg} text={"Working together, on principles."} text2={" Isi Mey Faida Hai."}/>
+    <Banner  backgroundImage={aboutbg}  text2={" About SAA"} text_sx2={{textAlign:"center"}}/>
     
     <Member/>
     

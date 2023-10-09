@@ -25,7 +25,8 @@ const Conduct = () => {
 
           <Grid item md={12} sx={{ paddingBottom: "30px" }}>
 
-            <Typography sx={{ color: "#231F20" }}>
+            <Typography sx={{ color: "#231F20" ,     padding: {xs:"0px 10px 0px 20px",sm:"0px 10px 0px 20px", md:"0"}
+}}>
               While Indians have a strong affinity for investment in gold, individuals seeking to invest in gold face several challenges in doing so, particularly around price transparency and quality assurance. As the market is fragmented and there is no overarching supervisory body, an industry - defined Code of Conduct is deemed to be an effective mechanism for protecting the interest of retail investors. Read about the various code of conduct below:
             </Typography>
           </Grid>

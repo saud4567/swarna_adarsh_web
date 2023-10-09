@@ -31,7 +31,7 @@ const aboutSwarna = () => {
 
   return (
     <div className="abbg-m">
-      <PageWidth sx={{ marginTop: "50px" ,}}>
+      <PageWidth sx={{ marginTop: "50px" ,  paddingLeft:{xs:"40px", md:"0px", sm:"30px"}, paddingRight:{xs:"10px", md:"0px", sm:"30px"}}}>
         <Grid container spacing={4} justifyContent="center">
           {/* Centered Heading */}
           <Grid item xs={12} sx={{ paddingBottom: "50px" }}>

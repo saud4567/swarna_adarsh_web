@@ -63,6 +63,7 @@ const Voice = ({ HeadingContainer, headingSideLine, textStyle, text }) => {
               lineHeight: "20px",
               fontSize: "13px",
               mb: "70px",
+              padding: {xs:"0px 20px 0px 20px",sm:"0px 10px 0px 20px", md:"0"}
             }}
           >
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -126,6 +127,7 @@ const Voice = ({ HeadingContainer, headingSideLine, textStyle, text }) => {
                   maxWidth="200px"
                   sx={{
 paddingLeft:"30px"
+,padding:"20px 0px 20px 40px"
                     // White text color
                   }}
                 >

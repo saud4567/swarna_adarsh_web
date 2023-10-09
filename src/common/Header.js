@@ -7,8 +7,11 @@ import {
   styled,
   IconButton, // Import IconButton
 } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+// import { useEffect } from "react";
 import React, { useState } from "react";
+import makeStyles from '@mui/styles/makeStyles';
+
+
 import { NavLink } from "react-router-dom";
 import menui from "../assets/menui.png";
 import logo1 from "../assets/logo1.png";
@@ -47,16 +50,17 @@ const Header = () => {
           <Grid item xs={6} sm={6} md={6} xl={6}>
             <Stack ml="20px">
               {/* <img src={logo1} alt="not loaded" width="200px" /> */}
-              <img
+             <a href="http://localhost:3000/home"> <img
                 src={logo1}
                 alt="not loaded"
                 width="200px"
+                
                 style={{ cursor: "pointer" }}
                 onClick={() => {
                 // Close the menu if it's open
                   window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to the top smoothly
                 }}
-              />
+              /></a>
             </Stack>
           </Grid>
 
