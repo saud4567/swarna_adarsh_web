@@ -24,8 +24,8 @@ jobs:
       - run:
           name: Deploy to S3
           command: |
-            aws configure set aws_access_key_id $AKIAXUEBMHW2PXAZAA5D
-            aws configure set aws_secret_access_key $Y2MSyA5puCvz/hIZmqmMzSHUsTiR1UmP/05HXUsL
+            aws configure set aws_access_key_id $AKIAXUEBMHW2OS63HD7N
+            aws configure set aws_secret_access_key $+pXp/61quKXH8BsKqljgk9JaEOkKCnkDuyxgDWeQ
             aws s3 sync dist/ s3://myhostingbucket1234 
 
 workflows:
