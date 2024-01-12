@@ -1,0 +1,36 @@
+version: 2.1
+orbs:
+  aws-cli: circleci/aws-cli@1.3.1
+
+jobs:
+  build:
+    docker:
+      - image: node:18
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: npm install --legacy-peer-deps
+      - run:
+          name: Build
+          command: npm run build
+      - run:
+          name: Install AWS CLI
+          command: |
+            curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            unzip awscliv2.zip
+            sudo ./aws/install
+      - run:
+          name: Deploy to S3
+          command: |
+            aws configure set aws_access_key_id $AKIAXUEBMHW2PXAZAA5D
+            aws configure set aws_secret_access_key $Y2MSyA5puCvz/hIZmqmMzSHUsTiR1UmP/05HXUsL
+            aws s3 sync dist/ s3://myhostingbucket1234 
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+
