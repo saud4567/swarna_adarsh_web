@@ -14,7 +14,7 @@ jobs:
           command: npm install --legacy-peer-deps
       - run:
           name: Build
-          command: npm run build:dev
+          command: npm run build
       - run:
           name: Install AWS CLI
           command: |
