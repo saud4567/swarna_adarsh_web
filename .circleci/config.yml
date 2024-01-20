@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: Change Directory
-          command: cd swarna_adarsh_web
+          command: cd ~/repo/swarna_adarsh_web
       - run:
           name: Install Dependencies
           command: npm install -legacy-peer-deps
