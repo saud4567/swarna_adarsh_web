@@ -32,8 +32,8 @@ jobs:
           name: Deploy to S3
           command: |
             echo "Syncing dist/ directory to S3"
-            aws configure set aws_access_key_id "AKIATCKASRC3O2GRERVG"
-            aws configure set aws_secret_access_key "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"
+            aws configure set aws_access_key_id "AKIATCKASRC3HS2OL6MO"
+            aws configure set aws_secret_access_key "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"
             aws s3 sync dist/ s3://my-test-1-buck --delete
             echo "Deployment to S3 completed"
             
