@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       - image: node:18
-    working_directory: ~/home/ubuntu/swarna_adarsh_web/.circleci
+    working_directory: ~/home/ubuntu/swarna_adarsh_web
     steps:
       - checkout
       - run:
@@ -27,7 +27,7 @@ jobs:
           command: |
             aws configure set aws_access_key_id "AKIATCKASRC3O2GRERVG"
             aws configure set aws_secret_access_key "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"
-            aws s3 sync ~/home/ubuntu/swarna_adarsh_web/.circleci/dist/ s3://my-test-1-buck --delete
+            aws s3 sync dist/ s3://my-test-1-buck --delete
 
 workflows:
   version: 2
