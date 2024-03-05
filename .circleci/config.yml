@@ -6,13 +6,13 @@ orbs:
 jobs:
   build:
     docker:
-      - image: node:18
-    working_directory: ~/home/ubuntu/swarna_adarsh_web
+      - image: circleci/node:18
+    working_directory: ~/repo
     steps:
       - checkout
       - run:
           name: Install Dependencies
-          command: npm install -legacy-peer-deps
+          command: npm install
       - run:
           name: Build
           command: npm run build
@@ -21,22 +21,14 @@ jobs:
           command: |
             curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
             unzip awscliv2.zip
-            ./aws/install
-      - run:
-          name: Create dist directory
-          command: mkdir -p dist
-      - run:
-          name: Verify dist directory
-          command: ls -l dist/
+            sudo ./aws/install
       - run:
           name: Deploy to S3
           command: |
-            echo "Syncing dist/ directory to S3"
             aws configure set aws_access_key_id "AKIATCKASRC3O2GRERVG"
             aws configure set aws_secret_access_key "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"
-            aws s3 sync dist/ s3://my-test-1-buck --delete
-            echo "Deployment to S3 completed"
-            
+            aws s3 sync build/ s3://my-test-1-buck --delete
+
 workflows:
   version: 2
   build-and-deploy:
