@@ -3,41 +3,38 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: node:18.14.0 # Using a specific version of the Node.js image
-    working_directory: ~/home/ubuntu/swarna_adarsh_web
+      - image: node:14  # Use a Node.js Docker image
     steps:
       - checkout
       - run:
           name: Install Dependencies
-          command: npm install -legacy-peer-deps
+          command: npm install
       - run:
           name: Build
           command: npm run build
-      - run:
-          name: Install AWS CLI
-          command: |
-            apt-get update
-            apt-get install -y unzip
-            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-            unzip awscliv2.zip
-            ./aws/install
-      - run:
-          name: Create dist directory
-          command: mkdir -p dist
-      - run:
-          name: Verify dist directory
-          command: ls -l dist/
+
+  deploy:
+    docker:
+      - image: cibuilds/aws:1.0.1  # Docker image with AWS CLI pre-installed
+    steps:
+      - checkout
       - run:
           name: Deploy to S3
           command: |
-            echo "Syncing dist/ directory to S3"
             aws configure set aws_access_key_id "AKIATCKASRC3AZX42AYA"
             aws configure set aws_secret_access_key "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"
-            aws s3 sync dist/ s3://my-test-1-bucket --delete
-            echo "Deployment to S3 completed"
+            aws s3 sync build/ s3://my-test-1-buck
 
 workflows:
   version: 2
   build-and-deploy:
     jobs:
       - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master  # Deploy only on changes to the master branch
+
