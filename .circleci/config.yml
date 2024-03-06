@@ -18,8 +18,8 @@ jobs:
           command: npm run build
       - aws-cli/install
       - aws-cli/setup:
-          aws-access-key-id: $AWS_ACCESS_KEY_ID
-          aws-secret-access-key: $AWS_SECRET_ACCESS_KEY
+          aws-access-key-id: "AKIATCKASRC3AZX42AYA"
+          aws-secret-access-key: "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"
           aws-region: $AWS_REGION
       - run:
           name: Deploy to S3
