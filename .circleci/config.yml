@@ -25,7 +25,7 @@ jobs:
           name: Deploy to S3
           command: |
             aws configure set aws_access_key_id $ACCESSKEY
-            aws configure set aws_secret_access_key $SECRETKEY
+            aws configure set aws_secret_access_key $SECRETEKY
             aws s3 sync build/ s3://my-test-1-buck --delete
 
 workflows:
