@@ -1,23 +1,19 @@
 pipeline {
-     agent any
-     stages {
-         stage('Build') {
-             steps {
-                 sh 'echo "Hello World"'
-                 sh '''
-                     echo "Multiline shell steps works too"
-                     ls -lah
-                 '''
-             }
-         }      
-         stage('Upload to AWS') {
-              steps {
-                  withAWS(region:'ap-south-1',credentials:'Jenkins-cred') {
-                  sh 'echo "Uploading content with AWS creds"'
-                      s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'index.html', bucket:'demo-bucket-15.com')
-                     
-                  }
-              }
-         }
-     }
+    agent any
+    environment {
+        AWS_DEFAULT_REGION = 'ap-south-1'
+    }
+    stages {
+        stage('Upload to S3') {
+            steps {
+                script {
+                    echo "Uploading content with AWS creds"
+                    // List the contents of the directory to check if the file exists
+                    sh 'ls -al /var/lib/jenkins/workspace/AWS-S3-Upload/'
+                    // Upload the file to S3
+                    s3Upload(file: '/var/lib/jenkins/workspace/AWS-S3-Upload/index.html', bucket: 'demo-bucket-15.com', path: '')
+                }
+            }
+        }
+    }
 }
