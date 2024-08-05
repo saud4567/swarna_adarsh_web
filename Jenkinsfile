@@ -4,6 +4,12 @@ pipeline {
         AWS_DEFAULT_REGION = 'ap-south-1'
     }
     stages {
+        stage('Build') {
+            steps {
+                // Example command to generate or move the index.html file
+                sh 'echo "<html><body>Hello, World!</body></html>" > /var/lib/jenkins/workspace/AWS-S3-Upload/index.html'
+            }
+        }
         stage('Upload to S3') {
             steps {
                 script {
