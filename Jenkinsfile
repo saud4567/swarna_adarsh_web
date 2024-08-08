@@ -14,7 +14,7 @@ pipeline {
                 script {
                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 's3-user1']]) {
                         echo "Uploading all content to S3 bucket"
-                        s3Upload(file: '', workingDir: '', bucket: 'demo-bucket-15.com', path: '')
+                        s3Upload(bucket: 'demo-bucket-15.com', path: '', workingDir: '/var/lib/jenkins/workspace/AWS-S3-Upload', includePathPattern: '**/*')
                     }
                 }
             }
