@@ -1,18 +1,19 @@
 pipeline {
     agent any
     environment {
-        AWS_DEFAULT_REGION = 'ap-south-1'  // Ensure this matches the bucket's region
+        AWS_DEFAULT_REGION = 'ap-south-1'
     }
     stages {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/saud4567/swarna_adarsh_web.git', branch: 'main'
+            }
+        }
         stage('Upload to S3') {
             steps {
                 script {
                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 's3-user1']]) {
-                        echo "Uploading content with AWS creds"
-                        // Verify the file exists
-                        sh 'ls -al /var/lib/jenkins/workspace/AWS-S3-Upload/'
-                        // Upload the file to S3
-                        s3Upload(file: '/var/lib/jenkins/workspace/AWS-S3-Upload/index.html', bucket: 'demo-bucket-15', path: '')
+                        sh 'aws s3 cp index.html s3://demo-bucket-15.com/'
                     }
                 }
             }
