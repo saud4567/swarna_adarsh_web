@@ -6,14 +6,16 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/saud4567/swarna_adarsh_web.git', branch: 'main'
+                git 'https://github.com/saud4567/swarna_adarsh_web.git'
             }
         }
         stage('Upload to S3') {
             steps {
                 script {
                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 's3-user1']]) {
-                        sh 'aws s3 cp index.html s3://demo-bucket-15.com/'
+                        echo "Uploading all content to S3 bucket"
+                        // Upload all files to S3
+                        s3Upload(file: '', workingDir: '/var/lib/jenkins/workspace/AWS-S3-Upload', bucket: 'demo-bucket-15.com', path: '')
                     }
                 }
             }
