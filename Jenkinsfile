@@ -12,7 +12,7 @@ pipeline {
                         // Verify the file exists
                         sh 'ls -al /var/lib/jenkins/workspace/AWS-S3-Upload/'
                         // Upload the file to S3
-                        s3Upload(file: '/var/lib/jenkins/workspace/AWS-S3-Upload/index.html', bucket: 'demo-bucket-15.com', path: '')
+                        s3Upload(file: '/var/lib/jenkins/workspace/AWS-S3-Upload/index.html', bucket: 'demo-bucket-15', path: '')
                     }
                 }
             }
